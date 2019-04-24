@@ -1,3 +1,29 @@
 # Word2vec and Metadata Records
 
-Repository for code related to word2vec and metadata records processing. More information will follow.
+Repository for code related to word2vec and metadata records processing.
+
+# Usage
+
+## Step 1: get metadata records
+
+The output of this step is stored in the file linked-data-query-results/result-with-delimiter.csv .
+
+As of writing, the SPARL endpoint from the Econstor project has been used. The data from that endpoint can be loaded via the script sparql_query.py
+
+## Step 2: train a model
+
+Run training_model.py . This script calls helper functions from another script: preprocess_sparql_output.py. 
+
+Various parameters for the model (including the path of the output file) can be set in training_model.py, by adapting this line:
+
+'''
+training(documents,size=20,sample=6e-5,mincount=20,negative=20,outputname="models/foo.model")
+'''
+
+## Step 3: analyse all models
+
+Run analyse_models.py . This will generate a file model-analysis.csv , that contains some statistics about all models in the (sub)directory.
+
+# Step 4: visualize a term
+
+Run visualize.py. The result will be stored in close-words.png

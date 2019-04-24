@@ -15,7 +15,7 @@ def replace_german_umlaute(unicode_string):
         utf8_string = utf8_string.replace(k, umlaute_dict[k])
     return utf8_string
 def preprocess_input():
-    csv_file = pd.read_csv('result-with-delimiter.csv',header=0,delimiter=',', encoding='utf-8')
+    csv_file = pd.read_csv('linked-data-query-results/result-with-delimiter.csv',header=0,delimiter=',', encoding='utf-8')
     for i, row in csv_file.iterrows():
         s = str(row.iloc[2])
         replaced1 = re.sub(' ','_',s)
