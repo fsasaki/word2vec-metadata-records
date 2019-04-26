@@ -42,6 +42,6 @@ for dirpath, dirs, files in os.walk(rootdir):
             model_analysis += "\n" + str(file) 
             model = Word2Vec.load(os.path.join(dirpath, file))
             model_analysis += print_model_parameters(model)
-f= open("model-analysis.csv","w", encoding="utf-8")
+f= open("model-analysis.tsv","w", encoding="utf-8")
 f.write(model_analysis)
 f.close()
