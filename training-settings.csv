@@ -1,0 +1,21 @@
+filename,hidden layer size,learning rate,min count,downsampling,negative sampling
+defaults-without-gensim-preprocessing.model,100,0.0001,5,0.001,5
+defaults.model,100,0.0001,5,0.001,5
+training11.model,150,0.0007,1,5.9999999999999995e-05,0
+training12.model,300,0.0007,1,5.9999999999999995e-05,0
+training13.model,150,0.0007,5,0.0,20
+training14.model,300,0.0007,5,0.0,20
+training15.model,150,0.0007,5,0.0,20
+training16.model,300,0.0007,5,0.0,20
+training17.model,150,0.0007,5,1e-05,20
+training18.model,300,0.0007,5,1e-05,20
+training19.model,150,0.0007,5,1e-05,20
+training20.model,300,0.0007,5,1e-05,20
+training21.model,150,0.0007,5,5.9999999999999995e-05,20
+training22.model,300,0.0007,5,5.9999999999999995e-05,20
+training23.model,150,0.0007,5,5.9999999999999995e-05,20
+training24.model,300,0.0007,5,5.9999999999999995e-05,20
+training3.model,150,0.0007,1,0.0,0
+training4.model,300,0.0007,1,0.0,0
+training7.model,150,0.0007,1,1e-05,0
+training8.model,300,0.0007,1,1e-05,0

@@ -1,3 +1,4 @@
+import pandas as pd
 import gensim
 import multiprocessing
 from preprocess_sparql_output import preprocess_input
@@ -8,6 +9,7 @@ def read_metadata_record(row,column_name):
     return gensim.utils.simple_preprocess(str(row[column_name]).encode('utf-8'))
 
 def training(documents,size, sample, mincount, negative, outputname):
+    print("output file name will be: " + outputname)
     logging.basicConfig(format="%(levelname)s - %(asctime)s: %(message)s", datefmt= '%H:%M:%S', level=logging.INFO)
     model = Word2Vec(min_count=mincount,
                      window=5,
@@ -29,4 +31,11 @@ for index, row in input.iterrows():
         documents.append(row['keywords'].split())
     else:
         documents.append(read_metadata_record(row,"keywords"))
-training(documents,size=20,sample=6e-5,mincount=20,negative=20,outputname="models/foo.model")
+trainingSettings = pd.read_csv('training-settings.csv','utf-8',',')
+for i, row in trainingSettings.iterrows():
+    size = row['hidden layer size']
+    sample = row['downsampling']
+    mincount = row['min count']
+    negative = row['negative sampling']
+    outputname = "models/" + row['filename']
+    training(documents, size, sample, mincount, negative, outputname)

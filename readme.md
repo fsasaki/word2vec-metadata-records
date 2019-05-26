@@ -10,15 +10,11 @@ The output of this step is stored in the file linked-data-query-results/result-w
 
 As of writing, the SPARL endpoint from the Econstor project has been used. The data from that endpoint can be loaded via the script sparql_query.py
 
-## Step 2: train a model
+## Step 2: train models
 
 Run training_model.py . This script calls helper functions from another script: preprocess_sparql_output.py. 
 
-Various parameters for the model (including the path of the output file) can be set in training_model.py, by adapting this line:
-
-'''
-training(documents,size=20,sample=6e-5,mincount=20,negative=20,outputname="models/foo.model")
-'''
+training_model.py calls the parameters for models defined in training-settings.csv.
 
 ## Step 3: analyse all models
 
