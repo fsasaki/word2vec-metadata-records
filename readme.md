@@ -1,6 +1,6 @@
 # Word2vec and Metadata Records
 
-Repository for code related to word2vec and metadata records processing.
+Repository for code related to word2vec and metadata records processing. For motivations and further explanations, see word2vec-metadata-records.pdf
 
 # Usage
 
@@ -23,3 +23,7 @@ Run analyse_models.py . This will generate a file model-analysis.csv , that cont
 # Step 4: visualize a term
 
 Run visualize.py. The result will be stored in close-words.png
+
+# Step 5: process recommendations for a given record
+
+Run recommender-zbw.ipynb . Set the record in that jupyter notebook.

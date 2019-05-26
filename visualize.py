@@ -9,13 +9,6 @@ import seaborn as sns
 sns.set_style("darkgrid")
 model = Word2Vec.load("models/defaults-without-gensim-preprocessing.model")
 vocabulary = model.wv.vocab.keys()
-#output = ""
-#type(vocabulary)
-#f= open("vocabulary-defaults.txt","w", encoding="utf-8")
-#for x in vocabulary:
-#    output += str (x) + "\n"
-#f.write(output)
-#f.close()
 def tsnescatterplot(model, word):
     arrays = np.empty((0, 100), dtype='f')
     word_labels = [word]
